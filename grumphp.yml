@@ -1,0 +1,9 @@
+grumphp:
+    tasks:
+        phpcs:
+            standard: ~
+        phpunit:
+            always_execute: true
+        phpstan:
+            level: 5
+    ascii: ~
