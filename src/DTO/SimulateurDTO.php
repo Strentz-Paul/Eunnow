@@ -4,15 +4,34 @@ declare(strict_types=1);
 
 namespace App\DTO;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+
 final class SimulateurDTO
 {
+    #[Assert\GreaterThan(0)]
+    private ?float $tjm;
+    #[Assert\GreaterThan(0)]
+    private ?int $nbJours;
+    #[Assert\GreaterThanOrEqual(0)]
+    private ?float $tauxImpots;
+    #[Assert\GreaterThanOrEqual(0)]
+    private float $palierTVA = 34400;
+    #[Assert\GreaterThanOrEqual(0)]
+    private float $tauxTVA = 19.5;
+
     public function __construct(
-        private ?float $tjm = null,
-        private ?int $nbJours = null,
-        private ?float $tauxImpots = null,
-        private ?int $palierTVA = 34400,
-        private ?float $tauxTVA = 19.5
+        ?float $tjm = null,
+        ?int $nbJours = null,
+        ?float $tauxImpots = null,
+        ?float $palierTVA = 34400,
+        ?float $tauxTVA = 19.5
     ) {
+        $this->tjm = $tjm;
+        $this->nbJours = $nbJours;
+        $this->tauxImpots = $tauxImpots;
+        $this->palierTVA = $palierTVA;
+        $this->tauxTVA = $tauxTVA;
     }
 
     /**
@@ -64,33 +83,33 @@ final class SimulateurDTO
     }
 
     /**
-     * @return int|null
+     * @return float
      */
-    public function getPalierTVA(): ?int
+    public function getPalierTVA(): float
     {
         return $this->palierTVA;
     }
 
     /**
-     * @param int|null $palierTVA
+     * @param float $palierTVA
      */
-    public function setPalierTVA(?int $palierTVA): void
+    public function setPalierTVA(float $palierTVA): void
     {
         $this->palierTVA = $palierTVA;
     }
 
     /**
-     * @return float|null
+     * @return float
      */
-    public function getTauxTVA(): ?float
+    public function getTauxTVA(): float
     {
         return $this->tauxTVA;
     }
 
     /**
-     * @param float|null $tauxTVA
+     * @param float $tauxTVA
      */
-    public function setTauxTVA(?float $tauxTVA): void
+    public function setTauxTVA(float $tauxTVA): void
     {
         $this->tauxTVA = $tauxTVA;
     }

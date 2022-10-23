@@ -26,7 +26,7 @@ interface SimulateurServiceInterface
      * @param float $tjm
      * @param int $nbJours
      * @param float $tauxImpots
-     * @param int $palierTVA
+     * @param float $palierTVA
      * @param float $tauxTVA
      * @param bool $yearly
      * @return float
@@ -35,7 +35,7 @@ interface SimulateurServiceInterface
         float $tjm,
         int $nbJours,
         float $tauxImpots,
-        int $palierTVA,
+        float $palierTVA,
         float $tauxTVA,
         bool $yearly
     ): float;

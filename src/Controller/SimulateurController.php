@@ -21,6 +21,16 @@ class SimulateurController extends AbstractController
         Request $request,
         SimulateurServiceInterface $simulateurService
     ): Response {
-        return $this->render('simulateur/index.html.twig');
+        $dto = new SimulateurDTO();
+        $simulateurForm = $this->createForm(SimulateurType::class, $dto);
+        $simulateurForm->handleRequest($request);
+        $vm = null;
+        if ($simulateurForm->isSubmitted() && $simulateurForm->isValid()) {
+            $vm = $simulateurService::getResultSimulateur($dto);
+        }
+        return $this->render('simulateur/index.html.twig', array(
+            'form' => $simulateurForm->createView(),
+            'vm' => $vm
+        ));
     }
 }

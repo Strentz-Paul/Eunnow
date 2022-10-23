@@ -1,3 +1,8 @@
 simulateur:
   label:
     simple: Simulateur
+  tjm: Taux Journalier Moyen
+  nb_jour: Nombre de jours
+  taux_impots: Taux des impôts
+  palier_tva: Palier avant de facturer la TVA
+  taux_tva: Taux de la TVA
