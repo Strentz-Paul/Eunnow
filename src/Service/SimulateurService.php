@@ -64,7 +64,7 @@ final class SimulateurService implements SimulateurServiceInterface
         float $tjm,
         int $nbJours,
         float $tauxImpots,
-        int $palierTVA,
+        float $palierTVA,
         float $tauxTVA,
         bool $yearly
     ): float {
