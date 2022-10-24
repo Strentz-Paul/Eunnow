@@ -1,6 +1,54 @@
+
+@font-face {
+  font-family: 'noto';
+  font-weight: 100;
+  src: url('/assets/fonts/Noto/NotoSansMono-Thin.ttf');
+}
+@font-face {
+  font-family: 'noto';
+  font-weight: 200;
+  src: url('/assets/fonts/Noto/NotoSansMono-ExtraLight.ttf');
+}
+@font-face {
+  font-family: 'noto';
+  font-weight: 300;
+  src: url('/assets/fonts/Noto/NotoSansMono-Light.ttf');
+}
+@font-face {
+  font-family: 'noto';
+  font-weight: 400;
+  src: url('/assets/fonts/Noto/NotoSansMono-Regular.ttf');
+}
+@font-face {
+  font-family: 'noto';
+  font-weight: 500;
+  src: url('/assets/fonts/Noto/NotoSansMono-Medium.ttf');
+}
+@font-face {
+  font-family: 'noto';
+  font-weight: 600;
+  src: url('/assets/fonts/Noto/NotoSansMono-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'noto';
+  font-weight: 700;
+  src: url('/assets/fonts/Noto/NotoSansMono-Bold.ttf');
+}
+@font-face {
+  font-family: 'noto';
+  font-weight: 800;
+  src: url('/assets/fonts/Noto/NotoSansMono-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'noto';
+  font-weight: 900;
+  src: url('/assets/fonts/Noto/NotoSansMono-Black.ttf');
+}
+
 * {
   padding: 0;
   margin: 0;
+  font-family: 'noto', sans-serif;
 }
 html {
   font-size: 1rem;
@@ -8,21 +56,22 @@ html {
 
 @include media-breakpoint-up(sm) {
   html {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
 @include media-breakpoint-up(md) {
   html {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
 @include media-breakpoint-up(lg) {
   html {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 }
+
 
 
 //----------------------//
@@ -122,4 +171,9 @@ html {
   text-align: right;
   color: darkred;
   font-size: 0.7em;
+}
+.identifier-title {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 70px;
 }
