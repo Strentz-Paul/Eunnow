@@ -7,7 +7,6 @@ namespace App\Controller;
 use App\Contracts\Service\SimulateurServiceInterface;
 use App\DTO\SimulateurDTO;
 use App\Form\SimulateurType;
-use App\ViewModel\SimulateurVM;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

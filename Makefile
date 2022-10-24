@@ -14,6 +14,9 @@ start:  ## Start server symfony
 stop:  ## Stop server symfony
 	symfony server:stop
 
+build-assets: ## Build scss to css and copy to public dir
+	yarn encore production
+
 logs:  ## Display logs of symfony server
 	symfony server:logs
 

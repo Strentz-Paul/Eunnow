@@ -4,8 +4,101 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-6 offset-3">
-            <h1>{{ "simulateur.label.simple"|trans }}</h1>
+        <div class="col-6 offset-3 text-center">
+            <h1>{{ "simulateur.label.simple"|trans|upper }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2">
+            {{ form_start(form) }}
+            <div class="col-12">
+                <div class="row m-b-12">
+                    <div class="col-6 text-right">
+                        {{ form_label(form.tjm) }}
+                    </div>
+                    <div class="col-4 text-left">
+                        <div class="input-group">
+                            {{ form_widget(form.tjm, {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="input-group-text">€</span>
+                        </div>
+                        {% if form_errors(form.tjm) is not null and form_errors(form.tjm) != '' %}
+                            <div class="alert-error-form">
+                                {{ remove_text('ERROR:', form.tjm.vars.errors) }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row m-b-12">
+                    <div class="col-6 text-right">
+                        {{ form_label(form.nbJours) }}
+                    </div>
+                    <div class="col-4 text-left">
+                        <div class="input-group">
+                            {{ form_widget(form.nbJours, {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="input-group-text">Jours</span>
+                        </div>
+                        {% if form_errors(form.nbJours) is not null and form_errors(form.nbJours) != '' %}
+                            <div class="alert-error-form">
+                                {{ remove_text('ERROR:', form.nbJours.vars.errors) }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row m-b-12">
+                    <div class="col-6 text-right">
+                        {{ form_label(form.tauxImpots) }}
+                    </div>
+                    <div class="col-4 text-left">
+                        <div class="input-group">
+                            {{ form_widget(form.tauxImpots, {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="input-group-text">%</span>
+                        </div>
+                        {% if form_errors(form.tauxImpots) is not null and form_errors(form.tauxImpots) != '' %}
+                            <div class="alert-error-form">
+                                {{ remove_text('ERROR:', form.tauxImpots.vars.errors) }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row m-b-12">
+                    <div class="col-6 text-right">
+                        {{ form_label(form.palierTVA) }}
+                    </div>
+                    <div class="col-4 text-left">
+                        <div class="input-group">
+                            {{ form_widget(form.palierTVA, {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="input-group-text">€</span>
+                        </div>
+                        {% if form_errors(form.palierTVA) is not null and form_errors(form.palierTVA) != '' %}
+                            <div class="alert-error-form">
+                                {{ remove_text('ERROR:', form.palierTVA.vars.errors) }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row m-b-12">
+                    <div class="col-6 text-right">
+                        {{ form_label(form.tauxTVA) }}
+                    </div>
+                    <div class="col-4 text-left">
+                        <div class="input-group">
+                            {{ form_widget(form.tauxTVA, {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="input-group-text">%</span>
+                        </div>
+                        {% if form_errors(form.tauxTVA) is not null and form_errors(form.tauxTVA) != '' %}
+                            <div class="alert-error-form">
+                                {{ remove_text('ERROR:', form.tauxTVA.vars.errors) }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row m-b-12">
+                    <div class="col-12 text-right">
+                        {{ form_widget(form.submit) }}
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
         </div>
     </div>
 {% endblock %}

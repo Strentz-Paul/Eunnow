@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace App\Form;
 
 use App\DTO\SimulateurDTO;
+use App\Form\Field\SubmitCustomType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Positive;
 use Symfony\Component\Validator\Validation;
 
 class SimulateurType extends AbstractType
@@ -48,7 +48,8 @@ class SimulateurType extends AbstractType
                 'attr' => array(
                     'min' => 0
                 )
-            ));
+            ))
+            ->add('submit', SubmitCustomType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
