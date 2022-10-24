@@ -6,3 +6,5 @@ simulateur:
   taux_impots: Taux des impôts
   palier_tva: Palier avant de facturer la TVA
   taux_tva: Taux de la TVA
+global:
+  submit: Envoyer

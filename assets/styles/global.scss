@@ -23,3 +23,103 @@ html {
     font-size: 1.6rem;
   }
 }
+
+
+//----------------------//
+//------- global -------//
+//----------------------//
+
+
+@for $i from 0 through 40 {
+  .m-#{$i} {
+    margin: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .m-t-#{$i} {
+    margin-top: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .m-r-#{$i} {
+    margin-right: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .m-b-#{$i} {
+    margin-bottom: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .m-l-#{$i} {
+    margin-left: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .p-#{$i} {
+    padding: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .p-t-#{$i} {
+    padding-top: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .p-r-#{$i} {
+    padding-right: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .p-b-#{$i} {
+    padding-bottom: #{$i}#{"px"} !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .p-l-#{$i} {
+    padding-left: #{$i}#{"px"} !important;
+  }
+}
+
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.bionic-reading-bold {
+  font-weight: bold;
+}
+.no-resize {
+  resize: none;
+}
+.text-right {
+  text-align: right !important;
+}
+
+.basic-color {
+  color: var(--text-color);
+}
+.no-border {
+  border: none;
+}
+.bold {
+  font-weight: 600;
+}
+.extra-bold {
+  font-weight: 900;
+}
+.alert-error-form {
+  padding: 2px 5px !important;
+  text-align: right;
+  color: darkred;
+  font-size: 0.7em;
+}
