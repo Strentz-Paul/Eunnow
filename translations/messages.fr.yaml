@@ -6,5 +6,15 @@ simulateur:
   taux_impots: Taux des impôts
   palier_tva: Palier avant de facturer la TVA
   taux_tva: Taux de la TVA
+  ca_annual: Chiffre d'affaire annuel
+  over: 💵 Vous avez dépassé le seuil de CA de la micro entreprise !
+  salaire_annuel: Salaire (annuel)
+  salaire_mensuel: Salaire (mensuel)
+  nb_jours_avant_seuil_tva: "Nombre de jours avant le seuil de TVA (%tva%€)"
+  tjm_avant_seuil_tva: TJM avant atteinte de seuil de TVA
+  informations: ⚠️ Ces chiffres sont donnés à titre indicatif ! ⚠️
 global:
   submit: Envoyer
+  result:
+    label: Résultats
+  day: jour(s)

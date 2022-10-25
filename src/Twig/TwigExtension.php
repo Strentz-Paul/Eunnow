@@ -17,6 +17,7 @@ class TwigExtension extends AbstractExtension
     {
         return array(
             new TwigFunction('remove_text', array($this, 'removeText')),
+            new TwigFunction('format_money', array($this, 'formatMoney')),
         );
     }
 
@@ -28,5 +29,14 @@ class TwigExtension extends AbstractExtension
     public function removeText(string $needle, string $haystack): string
     {
         return StringHelper::removeTextFromString($needle, $haystack);
+    }
+
+    /**
+     * @param float $number
+     * @return string
+     */
+    public function formatMoney(float $number): string
+    {
+        return number_format($number, 2, ',', ' ');
     }
 }
