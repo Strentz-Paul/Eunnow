@@ -7,11 +7,17 @@
 
 import './styles/app.scss';
 
-const $ = require('jquery');
 
-require('bootstrap');
+import * as bootstrap from 'bootstrap';
 
+// start the Stimulus application
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-$(document).ready(function() {
-    $('[data-toggle="popover"]').popover();
-});
+import { startStimulusApp } from '@symfony/stimulus-bridge';
+
+export const app = startStimulusApp(require.context(
+    '@symfony/stimulus-bridge/lazy-controller-loader!./controllers',
+    true,
+    /\.(j|t)sx?$/
+));
