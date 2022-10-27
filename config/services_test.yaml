@@ -1,0 +1,11 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true
+
+  App\Contracts\Service\LotoServiceInterface:
+    alias: App\Service\LotoService
+
+  App\Service\LotoService:
+    public: true

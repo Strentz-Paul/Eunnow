@@ -18,3 +18,10 @@ global:
   result:
     label: Résultats
   day: jour(s)
+loto:
+  label:
+    simple: Loto
+  nombre_de_tirage: Nombre de grilles
+  choix_du_type: Quel jeux voulez-vous utiliser ?
+  tirage:
+    label: Tirage
