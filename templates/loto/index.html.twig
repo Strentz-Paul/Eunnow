@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Loto{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-8 offset-2 text-right">
+            <h1 class="identifier-title">{{ "loto.label.simple"|trans|upper }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2">
+            {{ form_start(form) }}
+            <div class="col-12">
+                <div class="row m-b-12 d-flex align-items-center">
+                    <div class="col-6 text-right">
+                        {{ form_label(form.nombreTirage) }}
+                    </div>
+                    <div class="col-4 text-left">
+                        <div class="input-group">
+                            {{ form_widget(form.nombreTirage, {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="input-group-text">Grilles</span>
+                        </div>
+                        {% if form_errors(form.nombreTirage) is not null and form_errors(form.nombreTirage) != '' %}
+                            <div class="alert-error-form">
+                                {{ remove_text('ERROR:', form.nombreTirage.vars.errors) }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row m-b-12 d-flex align-items-center">
+                    <div class="col-6 text-right">
+                        {{ form_label(form.typeDeTirage) }}
+                    </div>
+                    <div class="col-4 text-left">
+                        <div class="input-group">
+                            {{ form_widget(form.typeDeTirage, {'attr' : {'class' : 'form-control'}}) }}
+                        </div>
+                        {% if form_errors(form.typeDeTirage) is not null and form_errors(form.typeDeTirage) != '' %}
+                            <div class="alert-error-form">
+                                {{ remove_text('ERROR:', form.typeDeTirage.vars.errors) }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row m-b-12">
+                    <div class="col-12 text-right">
+                        {{ form_widget(form.submit) }}
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+    {% if vm is not null %}
+        <div class="row">
+            <div class="col-8 offset-2">
+                {% for tirage in vm.tirage %}
+                    <div class="row">
+                        <div class="col-6 text-right bold">
+                            {{ 'loto.tirage.label'|trans|upper ~ ' ' ~ loop.index ~ ' :' }}
+                        </div>
+                        <div class="col-6">
+                            {{ tirage.displayTirage }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
