@@ -9,3 +9,9 @@ services:
 
   App\Service\LotoService:
     public: true
+
+  App\Contracts\Service\DevisServiceInterface:
+    alias: App\Service\DevisService
+
+  App\Service\DevisService:
+    public: true
